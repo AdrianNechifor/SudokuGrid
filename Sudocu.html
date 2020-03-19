@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sudoku Smecher</title>
+    <link rel="stylesheet" href="style.css" media="screen">
+    <script src="main_sudocu.js" defer></script>
+</head>
+<body>
+<header><h1 class="title">Sudoku Smecher pentru cei mai smecheri!</h1></header>
+    <div class="container_game"></div>
+        <div class="9cells" id="box1">
+            <div class="cell" id="cell11"><span>11</span></div>
+            <div class="cell" id="cell12"><span>12</span></div>
+            <div class="cell" id="cell13"><span>13</span></div>
+            <div class="cell" id="cell21"><span>21</span></div>
+            <div class="cell" id="cell22"><span>22</span></div>
+            <div class="cell" id="cell23"><span>23</span></div>
+            <div class="cell" id="cell31"><span>31</span></div>
+            <div class="cell" id="cell32"><span>32</span></div>
+            <div class="cell" id="cell33"><span>33</span></div>
+        </div>
+        <div class="9cells" id="box2">
+            <div class="cell" id="cell14"><span>14</span></div>
+            <div class="cell" id="cell15"><span>15</span></div>
+            <div class="cell" id="cell16"><span>16</span></div>
+            <div class="cell" id="cell24"><span>24</span></div>
+            <div class="cell" id="cell25"><span>25</span></div>
+            <div class="cell" id="cell26"><span>26</span></div>
+            <div class="cell" id="cell34"><span>34</span></div>
+            <div class="cell" id="cell35"><span>35</span></div>
+            <div class="cell" id="cell36"><span>36</span></div>
+        </div>
+        <div class="9cells" id="box3">
+            <div class="cell" id="cell17"><span>17</span></div>
+            <div class="cell" id="cell18"><span>18</span></div>
+            <div class="cell" id="cell19"><span>19</span></div>
+            <div class="cell" id="cell27"><span>27</span></div>
+            <div class="cell" id="cell28"><span>28</span></div>
+            <div class="cell" id="cell29"><span>29</span></div>
+            <div class="cell" id="cell37"><span>37</span></div>
+            <div class="cell" id="cell38"><span>38</span></div>
+            <div class="cell" id="cell39"><span>39</span></div>
+        </div>
+        <div class="9cells" id="box4">
+            <div class="cell" id="cell41"><span>41</span></div>
+            <div class="cell" id="cell42"><span>42</span></div>
+            <div class="cell" id="cell43"><span>43</span></div>
+            <div class="cell" id="cell51"><span>51</span></div>
+            <div class="cell" id="cell52"><span>52</span></div>
+            <div class="cell" id="cell53"><span>53</span></div>
+            <div class="cell" id="cell61"><span>61</span></div>
+            <div class="cell" id="cell62"><span>62</span></div>
+            <div class="cell" id="cell63"><span>63</span></div>
+        </div>
+        <div class="9cells" id="box5">
+            <div class="cell" id="cell44"><span>44</span></div>
+            <div class="cell" id="cell45"><span>45</span></div>
+            <div class="cell" id="cell46"><span>46</span></div>
+            <div class="cell" id="cell54"><span>54</span></div>
+            <div class="cell" id="cell55"><span>55</span></div>
+            <div class="cell" id="cell56"><span>56</span></div>
+            <div class="cell" id="cell64"><span>64</span></div>
+            <div class="cell" id="cell65"><span>65</span></div>
+            <div class="cell" id="cell66"><span>66</span></div>
+        </div>
+        <div class="9cells" id="box6">
+            <div class="cell" id="cell47"><span>47</span></div>
+            <div class="cell" id="cell48"><span>48</span></div>
+            <div class="cell" id="cell49"><span>49</span></div>
+            <div class="cell" id="cell57"><span>57</span></div>
+            <div class="cell" id="cell58"><span>58</span></div>
+            <div class="cell" id="cell59"><span>59</span></div>
+            <div class="cell" id="cell67"><span>67</span></div>
+            <div class="cell" id="cell68"><span>68</span></div>
+            <div class="cell" id="cell69"><span>69</span></div>
+        </div>
+        <div class="9cells" id="box7">
+            <div class="cell" id="cell71"><span>71</span></div>
+            <div class="cell" id="cell72"><span>72</span></div>
+            <div class="cell" id="cell73"><span>73</span></div>
+            <div class="cell" id="cell81"><span>81</span></div>
+            <div class="cell" id="cell82"><span>82</span></div>
+            <div class="cell" id="cell83"><span>83</span></div>
+            <div class="cell" id="cell91"><span>91</span></div>
+            <div class="cell" id="cell92"><span>92</span></div>
+            <div class="cell" id="cell93"><span>93</span></div>
+        </div>
+        <div class="9cells" id="box8">
+            <div class="cell" id="cell74"><span>74</span></div>
+            <div class="cell" id="cell75"><span>75</span></div>
+            <div class="cell" id="cell76"><span>76</span></div>
+            <div class="cell" id="cell84"><span>84</span></div>
+            <div class="cell" id="cell85"><span>85</span></div>
+            <div class="cell" id="cell86"><span>86</span></div>
+            <div class="cell" id="cell94"><span>94</span></div>
+            <div class="cell" id="cell95"><span>95</span></div>
+            <div class="cell" id="cell96"><span>96</span></div>
+        </div>
+        <div class="9cells" id="box9">
+            <div class="cell" id="cell77"><span>77</span></div>
+            <div class="cell" id="cell78"><span>78</span></div>
+            <div class="cell" id="cell79"><span>79</span></div>
+            <div class="cell" id="cell87"><span>87</span></div>
+            <div class="cell" id="cell88"><span>88</span></div>
+            <div class="cell" id="cell89"><span>89</span></div>
+            <div class="cell" id="cell97"><span>97</span></div>
+            <div class="cell" id="cell98"><span>98</span></div>
+            <div class="cell" id="cell99"><span>99</span></div>
+        </div>
+    <div class="container_menu">
+        <button class="new_game">New Game</button>
+        <button class="choice" id="choice7">7</button>
+        <button class="choice" id="choice8">8</button>
+        <button class="choice" id="choice9">9</button>
+        <button class="choice" id="choice4">4</button>
+        <button class="choice" id="choice5">5</button>
+        <button class="choice" id="choice6">6</button>
+        <button class="choice" id="choice1">1</button>
+        <button class="choice" id="choice2">2</button>
+        <button class="choice" id="choice3">3</button>
+        <button class="choice" id="choiceErase">Erase</button>
+        <button class="choice" id="choiceUndo">Undo</button>
+        <button class="choice" id="choiceHint">Hint</button>
+    </div>
+<footer><h1>Numele echipei</h1></footer>
+</body>
+</html>
