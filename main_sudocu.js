@@ -10,7 +10,7 @@ var Matrix = {'00': '9', '01': '5', '02': '7', '03': '6', '04': '1', '05': '3', 
               '80': '7', '81': '3', '82': '6', '83': '1', '84': '8', '85': '5', '86': '4', '87': '2', '88': '9'};
 
 function createMatrix() {
-    let deletedCell = 5;
+    let deletedCell = 1;
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
             let x = Math.floor(Math.random()*10);
@@ -30,9 +30,6 @@ function displayMatrix() {
         for (let j = 0; j < 9; j++) {
             let val = Math.floor(((parseInt(k,10)) % 9) / 3) + 3 * Math.floor((parseInt(k,10))/ (9 * 3));
             $('.container_game').append( '<div class="cell '+(val % 2 !== 1 ?' odd_square':'' )+'" id="cell'+i+'-'+j+'-'+val+'">'+Matrix[i+''+j]+'</div>');
-            if (val % 2 === 1) {
-
-            }
             k++;
 
         }
@@ -76,20 +73,27 @@ function selectCell(cellId) {
 }
 
 function checkWin(rcb) {
-    $("div[class^='cell']").each(function() {
+    $('.cell').each(function() {
         if (easyCheck($(this).html(), rcb) === false) {
-            console.log('aici1');
             return false;
         }
-
         if ($(this).html() === '') {
-            console.log('aici2');
             return false;
         }
     });
-    console.log('aici3');
     return true;
 }
+
+function allCellsFilled() {
+    let allCellsNumbers = [];
+     $('.cell').each(function() {
+         if ($(this).html() !== '') {
+             allCellsNumbers.push($(this).html());
+         }
+     });
+     return allCellsNumbers.length;
+}
+
 /*
 function newGame(Matrix) {
     let i = 0;
@@ -184,15 +188,13 @@ function main() {
     displayMatrix();
     $('.choice').click(function() {
         let rowColBox = $('.selectedCell').attr('id').replace('cell','').split('-');
-//        if (easyCheck($(this).val(), rowColBox) === true) {
-            console.log($(this).val());
+        if (easyCheck($(this).val(), rowColBox) === true) {
             Matrix[rowColBox[0]+''+rowColBox[1]] = $(this).val();
             $('.selectedCell').html($(this).val());
-            console.log(checkWin(rowColBox));
-            if (checkWin(rowColBox) === true) {
-                $('.win').html('YOU WIN!');
-            }
-//        };
+}
+    if (checkWin(rowColBox) === true && allCellsFilled() === 81) {
+        $('.win').html('YOU WIN!');
+        }
     });
     $("div[class^='cell']").click(function() {
         $('.selectedCell').removeClass('selectedCell');
@@ -214,7 +216,6 @@ function main() {
 }
 
 $( document ).ready(function() {
-//    console.log( "ready!" );
+    console.log( "ready!" );
     main();
     });
-;

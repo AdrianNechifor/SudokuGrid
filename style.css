@@ -58,4 +58,8 @@
 
 .win {
     width: 700px;
+    height: 100px;
+    text-align: center;
+    color: red;
+    font-size: 100px;
 }
