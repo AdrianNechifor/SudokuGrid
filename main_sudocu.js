@@ -14,7 +14,6 @@ function createMatrix() {
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
             let x = Math.floor(Math.random()*10);
-//            console.log(x);
             if (x === 9 && deletedCell > 0) {
                 Matrix[i + '' + j] = '';
                 deletedCell--;
@@ -30,8 +29,12 @@ function displayMatrix() {
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
             let val = Math.floor(((parseInt(k,10)) % 9) / 3) + 3 * Math.floor((parseInt(k,10))/ (9 * 3));
-            $('.container_game').append( '<div class="cell" id="cell'+i+'-'+j+'-'+val+'">'+Matrix[i+''+j]+'</div>');
+            $('.container_game').append( '<div class="cell '+(val % 2 !== 1 ?' odd_square':'' )+'" id="cell'+i+'-'+j+'-'+val+'">'+Matrix[i+''+j]+'</div>');
+            if (val % 2 === 1) {
+
+            }
             k++;
+
         }
     }
 }
@@ -43,27 +46,25 @@ function easyCheck(btnValue, rcb) {
             checkBox.push($(this).html());
         }
     });
-    if ($.inArray(btnValue, checkBox)) {
-        console.log(btnValue+' exista in checkBox');
-        console.log(checkBox);
+    if ($.inArray(btnValue, checkBox) !== -1) {
         return false;
     }
     let checkLine = [];
     for (i=0; i<9; i++) {
         if (Matrix[i+''+rcb[1]] !== '') {
-            checkLine.push(Matrix[i+''+rcb[1]]);
-    }}
-    if ($.inArray(btnValue, checkLine)) {
-                console.log(btnValue+' exista in checkLine');
+            checkLine.push([i+''+rcb[1]]);
+    }
+    }
+    if ($.inArray(btnValue, checkLine) !== -1) {
         return false;
     }
     let checkCol = [];
     for (j=0; j<9; j++) {
         if (Matrix[rcb[0]+''+j] !== '') {
             checkCol.push(Matrix[rcb[0]]+''+j);
-    }}
-    if ($.inArray(btnValue, checkCol)) {
-                console.log(btnValue+' exista in checkCol');
+    }
+    }
+    if ($.inArray(btnValue, checkCol) !== -1) {
         return false;
     }
     return true;
@@ -72,9 +73,23 @@ function easyCheck(btnValue, rcb) {
 
 function selectCell(cellId) {
     $('#'+cellId).addClass('selectedCell');
-    console.log(cellId);
 }
 
+function checkWin(rcb) {
+    $("div[class^='cell']").each(function() {
+        if (easyCheck($(this).html(), rcb) === false) {
+            console.log('aici1');
+            return false;
+        }
+
+        if ($(this).html() === '') {
+            console.log('aici2');
+            return false;
+        }
+    });
+    console.log('aici3');
+    return true;
+}
 /*
 function newGame(Matrix) {
     let i = 0;
@@ -169,11 +184,15 @@ function main() {
     displayMatrix();
     $('.choice').click(function() {
         let rowColBox = $('.selectedCell').attr('id').replace('cell','').split('-');
-        if (easyCheck($(this).val(), rowColBox) === true) {
+//        if (easyCheck($(this).val(), rowColBox) === true) {
             console.log($(this).val());
             Matrix[rowColBox[0]+''+rowColBox[1]] = $(this).val();
             $('.selectedCell').html($(this).val());
-        };
+            console.log(checkWin(rowColBox));
+            if (checkWin(rowColBox) === true) {
+                $('.win').html('YOU WIN!');
+            }
+//        };
     });
     $("div[class^='cell']").click(function() {
         $('.selectedCell').removeClass('selectedCell');

@@ -1,6 +1,32 @@
 .container_game {
     width:315px;
     height:315px;
+    float:left;
+}
+
+.container_menu {
+    width:350px;
+    height:315px;
+    float:right;
+}
+
+.all {
+    width: 700px;
+}
+
+.choice {
+    width: 100px;
+    height: 55px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.new_game {
+    width: 318px;
+    height: 55px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
 }
 
 .9cells {
@@ -12,7 +38,7 @@
 .cell {
     border:1px;
     border-style:solid;
-    border-color: red;
+    border-color: #aaaaaa;
     width:33px;
     height:33px;
     float:left;
@@ -24,4 +50,12 @@
 .selectedCell {
     background-color: aqua;
     border-color: blue;
+}
+
+.odd_square {
+    background-color: #eeeeee;
+}
+
+.win {
+    width: 700px;
 }
