@@ -1,0 +1,27 @@
+.container_game {
+    width:315px;
+    height:315px;
+}
+
+.9cells {
+    width:99px;
+    height:99px;
+    float:left;
+}
+
+.cell {
+    border:1px;
+    border-style:solid;
+    border-color: red;
+    width:33px;
+    height:33px;
+    float:left;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 33px;
+}
+
+.selectedCell {
+    background-color: aqua;
+    border-color: blue;
+}
