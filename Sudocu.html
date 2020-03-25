@@ -8,7 +8,8 @@
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
-    <script src="main_sudocu.js" defer></script>
+    <script src="SudokuBoards.js" ></script>
+    <script src="main_sudocu.js" ></script>
 
 </head>
 <body>
@@ -30,113 +31,11 @@
             <button class="choice" id="choiceUndo">Undo</button>
             <button class="choice" id="choiceHint">Hint</button>
         </div>
+    <div class="container_message"></div>
     <div style="clear:both"></div>
-    <div class="win"></div>
 </div>
-
-<footer><h1>Numele echipei</h1></footer>
+<footer><h1>Adrian Nechifor</h1>
+        <h1>Dima Procopovici</h1>
+</footer>
 </body>
 </html>
-
-<!--
-   <div class="9cells" id="box1">
-            <div class="cell" id="cell11">11</div>
-            <div class="cell" id="cell12">12</div>
-            <div class="cell" id="cell13">13</div>
-            <div class="cell" id="cell21">21</div>
-            <div class="cell" id="cell22">22</div>
-            <div class="cell" id="cell23">23</div>
-            <div class="cell" id="cell31">31</div>
-            <div class="cell" id="cell32">32</div>
-            <div class="cell" id="cell33">33</div>
-        </div>
-        <div class="9cells" id="box2">
-            <div class="cell" id="cell14">14</div>
-            <div class="cell" id="cell15">15</div>
-            <div class="cell" id="cell16">16</div>
-            <div class="cell" id="cell24">24</div>
-            <div class="cell" id="cell25">25</div>
-            <div class="cell" id="cell26">26</div>
-            <div class="cell" id="cell34">34</div>
-            <div class="cell" id="cell35">35</div>
-            <div class="cell" id="cell36">36</div>
-        </div>
-        <div class="9cells" id="box3">
-            <div class="cell" id="cell17">17</div>
-            <div class="cell" id="cell18">18</div>
-            <div class="cell" id="cell19">19</div>
-            <div class="cell" id="cell27">27</div>
-            <div class="cell" id="cell28">28</div>
-            <div class="cell" id="cell29">29</div>
-            <div class="cell" id="cell37">37</div>
-            <div class="cell" id="cell38">38</div>
-            <div class="cell" id="cell39">39</div>
-        </div>
-        <div class="9cells" id="box4">
-            <div class="cell" id="cell41">41</div>
-            <div class="cell" id="cell42">42</div>
-            <div class="cell" id="cell43">43</div>
-            <div class="cell" id="cell51">51</div>
-            <div class="cell" id="cell52">52</div>
-            <div class="cell" id="cell53">53</div>
-            <div class="cell" id="cell61">61</div>
-            <div class="cell" id="cell62">62</div>
-            <div class="cell" id="cell63">63</div>
-        </div>
-        <div class="9cells" id="box5">
-            <div class="cell" id="cell44">44</div>
-            <div class="cell" id="cell45">45</div>
-            <div class="cell" id="cell46">46</div>
-            <div class="cell" id="cell54">54</div>
-            <div class="cell" id="cell55">55</div>
-            <div class="cell" id="cell56">56</div>
-            <div class="cell" id="cell64">64</div>
-            <div class="cell" id="cell65">65</div>
-            <div class="cell" id="cell66">66</div>
-        </div>
-        <div class="9cells" id="box6">
-            <div class="cell" id="cell47">47</div>
-            <div class="cell" id="cell48">48</div>
-            <div class="cell" id="cell49">49</div>
-            <div class="cell" id="cell57">57</div>
-            <div class="cell" id="cell58">58</div>
-            <div class="cell" id="cell59">59</div>
-            <div class="cell" id="cell67">67</div>
-            <div class="cell" id="cell68">68</div>
-            <div class="cell" id="cell69">69</div>
-        </div>
-        <div class="9cells" id="box7">
-            <div class="cell" id="cell71">71</div>
-            <div class="cell" id="cell72">72</div>
-            <div class="cell" id="cell73">73</div>
-            <div class="cell" id="cell81">81</div>
-            <div class="cell" id="cell82">82</div>
-            <div class="cell" id="cell83">83</div>
-            <div class="cell" id="cell91">91</div>
-            <div class="cell" id="cell92">92</div>
-            <div class="cell" id="cell93">93</div>
-        </div>
-        <div class="9cells" id="box8">
-            <div class="cell" id="cell74">74</div>
-            <div class="cell" id="cell75">75</div>
-            <div class="cell" id="cell76">76</div>
-            <div class="cell" id="cell84">84</div>
-            <div class="cell" id="cell85">85</div>
-            <div class="cell" id="cell86">86</div>
-            <div class="cell" id="cell94">94</div>
-            <div class="cell" id="cell95">95</div>
-            <div class="cell" id="cell96">96</div>
-        </div>
-        <div class="9cells" id="box9">
-            <div class="cell" id="cell77">77</div>
-            <div class="cell" id="cell78">78</div>
-            <div class="cell" id="cell79">79</div>
-            <div class="cell" id="cell87">87</div>
-            <div class="cell" id="cell88">88</div>
-            <div class="cell" id="cell89">89</div>
-            <div class="cell" id="cell97">97</div>
-            <div class="cell" id="cell98">98</div>
-            <div class="cell" id="cell99">99</div>
-        </div>
-    </div>
--->
