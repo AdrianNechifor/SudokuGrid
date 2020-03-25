@@ -1,5 +1,5 @@
-
-var MatrixTemplate = SudokuBoards[1];
+var randSud = Math.floor(Math.random()*10);
+var MatrixTemplate = SudokuBoards[randSud];
 var Matrix = {};
 
 function createMatrix() {
@@ -13,7 +13,6 @@ function createMatrix() {
             k++;
         }
     }
-
 }
 
 function displayMatrix() {
@@ -27,9 +26,9 @@ function displayMatrix() {
 
 function appendElement(element, string)
     {
-    if (element != undefined)
+    if (element !== undefined)
     {
-    if (string != undefined)
+    if (string !== undefined)
         string = string + ' ' + element;
     else
         string = element;
@@ -47,7 +46,7 @@ function easyCheck() {
 
     for (key in Matrix)
         {
-        if (Matrix[key] !=' ' && Number(Matrix[key]) >= 1 && Number(Matrix[key]) <= 9)
+        if (Matrix[key] !=='' && Number(Matrix[key]) >= 1 && Number(Matrix[key]) <= 9)
             {
             rcs = key.split('-');
             matrix_rows[Number(rcs[0])] = appendElement(Matrix[key], matrix_rows[Number(rcs[0])]);
@@ -103,20 +102,30 @@ function main() {
     $('.choice').click(function() {
         let value_of_pushed_button = $(this).val(); //the value of selected button
         let selected_cell_id = $('.selectedCell').attr('id');
-        if (selected_cell_id != undefined) // if empty cell is selected
+        if (selected_cell_id !== undefined) // if empty cell is selected
             {
             let rowColBox = selected_cell_id.replace('cell', '');
             $('#' + selected_cell_id).html(value_of_pushed_button); //write the value of selected button in selected cell
             Matrix[rowColBox] = value_of_pushed_button;
 
-            if (checkWin() == true)
+            if (checkWin() === true)
                 addMessage('You win!');
             }
 
 
     });
 
-    $("div[class^='cell']").click(function() { //bindueste click on a cell
+    $('.reset').click(function() {
+        $(".container_game").empty();
+        main();
+    });
+
+
+    $('.new_game').click(function() {
+        location.reload();
+    });
+
+    $("div[class^='cell']").click(function() { //binds click on a cell
         $('.selectedCell').removeClass('selectedCell'); //deselect cell
         let rowColBox = $(this).attr('id').replace('cell','');
         if (Matrix[rowColBox] === '') { //select cell if empty
