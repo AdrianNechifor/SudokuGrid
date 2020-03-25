@@ -1,72 +1,89 @@
+body{
+    display: grid;
+    grid-template-columns: auto 400px 400px auto;
+    grid-template-areas:
+    'header header header header'
+    '. table buttons .'
+    'footer footer footer footer';
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+footer{
+    grid-area: footer;
+}
+
+header{
+    grid-area: header;
+}
+
+h1{
+    text-shadow: 2px 2px 5px red;
+    text-align: center;
+}
+
+
 .container_game {
-    width:315px;
-    height:315px;
-    float:left;
+    height: 400px;
+    grid-area: table;
 }
 
-.container_menu {
-    width:350px;
-    height:315px;
-    float: left;
-    margin-right: 1-px;
-    margin-left: 10px;
+
+.new_game{
+    grid-area: NG;
+    font-size: 35px;
 }
 
-.all {
-    width: 1000px;
+.choice{
+    font-size: 35px;
 }
 
-.choice {
-    width: 100px;
-    height: 55px;
-    margin-right: 5px;
-    margin-bottom: 10px;
-    font-size: 1.5em;
-}
-.container_message
-{
-    width:300px;
-    height:315px;
-    float: right;
 
+.container_menu{
+    height: 400px;
+    grid-area: buttons;
+    display: inline-grid;
+    grid-template-colums: auto auto auto;
+    grid-gap: 3px;
+    grid-template-areas:
+    'NG NG NG'
+    'ch  ch  ch'
+    'ch  ch  ch '
+    'ch  ch  ch '
+    'ch  ch  ch';
 }
-.new_game {
-    width: 318px;
-    height: 55px;
-    margin-bottom: 10px;
-    font-size: 1.5em;
-}
-
 
 .cell {
     border:1px;
     border-style:solid;
     border-color: #aaaaaa;
-    width:33px;
-    height:33px;
     float:left;
     text-align: center;
     vertical-align: middle;
-    line-height: 33px;
+    line-height: 45px;
+    font-size: 30px;
+    width: 10.5%;
+    height: 10.5%;
 }
 
 .selectedCell {
     border-color: blue;
 }
 
+@media screen and (max-width: 840px) {
+    body{
+         display: grid;
+        grid-template-columns: auto 400px auto;
+        grid-template-areas:
+        'header header header'
+        '. table .'
+        '. buttons .'
+        'footer footer footer';
+        grid-gap: 5px;
+        padding: 5px;
+    }
+}
+
 .odd_square {
     background-color: #eeeeee;
-}
-
-.container_message
-{
-    width:400px;
-    height:150px;
-    float: right;
-    color: red;
-    font-size: 100px;
-}
-
-h1 {
-    text-shadow: 2px 2px 5px red;
 }
